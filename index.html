@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<<<<<<< Updated upstream
+    <title>DigitalPollingStation_RO   _Fvrontend</title>
+=======
+    <title>DigitalPollingStation_RO_Frontend</title>
+>>>>>>> Stashed changes
+    <base href="/" />
+
+
+    <!-- Civica design systems https://ux-designsystem.azurefd.net/ -->
+    <link href="_content/Civica.UX.DesignSystem/css/libs.min.css" rel="stylesheet" />
+    <link href="_content/Civica.UX.DesignSystem/css/main.min.css" rel="stylesheet" />
+
+    <!-- bootstrap given priority to fix civica overrides of fundamental classes-->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="_content/DigitalPollingStation_SharedComponentLibrary/css/sharedcomponents.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet" />
+
+    <link href="DigitalPollingStation_RO_Frontend.styles.css" rel="stylesheet" />
+    <link href="manifest.json" rel="manifest" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+    <link rel="stylesheet" href="https://use.typekit.net/dej7nsd.css">
+</head>
+
+<body>
+    <style>
+
+    </style>
+    <div id="app" style="min-height: 100vh;" class="ces-bg-app">
+        <div class="text-center pt-3" style="color: #D62598; font-size: 16pt">
+            <h2>Loading Digital Polling Station ...</h2>
+        </div>
+        <div class="text-center mt-3">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                  style="font-size: 16pt; width: 36px; height: 36px; color: #D62598" />
+        </div>
+        <div class="text-center">
+            <img src="/images/blazor-logo.png" alt="The Microsoft Blazor Logo" style="width:30%" />
+        </div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_content/Microsoft.Authentication.WebAssembly.Msal/AuthenticationService.js"></script>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

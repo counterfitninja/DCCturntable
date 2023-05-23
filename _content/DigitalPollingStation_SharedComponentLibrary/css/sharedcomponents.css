@@ -1,0 +1,117 @@
+﻿.mainSharedLayout {
+    /*Common styles*/
+}
+
+.ces-bg-app {
+    background-color: #e8eff7
+}
+/*app layout start*/
+.app-layout .user-action :is(i) {
+    font-size: 1.2rem;
+}
+.app-layout .logo i {
+    color: var(--ds-colour-primary);
+    font-size: 1.4rem;
+}
+.app-layout .logo label {
+    color: var(--ds-colour-primary-hover);
+    font-size: 1.4rem;
+}
+.app-layout .logout :is(i,span) {
+    color: var(--ds-colour-primary-hover);
+}
+.app-layout .logout span {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+/*app layout start*/
+
+
+/*menu customization start*/
+.menu-tile {
+    border-radius: 5px;
+    filter: drop-shadow(0px 30px 40px rgba(0, 0, 0, 0.161));
+}
+
+    .menu-tile i {
+        font-size: 3.4rem
+    }
+
+    .menu-tile .subheading {
+        font-weight: 100;
+        font-size: 0.8rem;
+        color: var(--ds-colour-text);
+    }
+/*menu customization end*/
+
+
+/*menu dashboard-count start*/
+.dashboard-count {
+    background-color: #E8EFF7
+}
+
+    .dashboard-count .title {
+        color: var(--ds-colour-text);
+        background-color: #F3F7FB;
+        border-radius: 5px 5px 0 0 !important;
+    }
+
+    .dashboard-count .dash-circle {
+        height: 100px;
+        width: 100px;
+        border-color: var(--ds-colour-background-primary) !important
+    }
+
+        .dashboard-count .dash-circle span {
+            font-size: 1.4rem;
+        }
+/*menu dashboard-count end*/
+
+
+/*Profile Tile Start*/
+.mainSharedLayout .btn-primary,
+.swal2-container .btn-primary {
+    background-color: var(--ds-colour-primary);
+    border-color: var(--ds-colour-primary);
+    border-radius: 25px;
+}
+
+.mainSharedLayout .btn-danger,
+.swal2-container .btn-danger {
+    background-color: var(--ds-colour-rag-red);
+    border-color: var(--ds-colour-rag-red);
+    border-radius: 25px;
+    color: white
+}
+
+/*Profile Tile end*/
+.btn-navigation {
+    min-width: 150px;
+    height: 45px;
+    border-radius: 25px;
+    background-color: #007D86;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: 1px solid #007D86;
+    padding: 7px 12px;
+}
+
+
+/*- UnAuth Landing page-*/
+.unauthlanding h2 {
+    font-size: 2.25rem;
+}
+
+.unauthlanding h3 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.unauthlanding .row {
+    min-height: calc(100vh - 100px);
+}
+
+
+/*- End UnAuth Landing page-*/
