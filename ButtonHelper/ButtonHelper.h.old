@@ -1,0 +1,73 @@
+#ifndef BUTTONHELPER_h
+#define BUTTONHELPER_h
+
+#include "Arduino.h"
+
+unsigned long currentMillis;
+unsigned long timePressed;
+unsigned long period = 500;
+boolean oldSwitchState = LOW;
+
+void initButton(unsigned long pLongPressPeriod)
+{
+  timePressed = millis();
+  currentMillis = 0;  
+  period = pLongPressPeriod;
+}
+
+void processButton(byte pPin_switch, byte pSequenceLength, byte& pState, boolean& pSinglePress, boolean& pLongPress)
+{
+    // variables to hold the new and old switch states
+    boolean newSwitchState1 = LOW;
+    boolean newSwitchState2 = LOW;
+    boolean newSwitchState3 = LOW;
+
+    // set the press states to false first of all
+    pSinglePress = false;
+    pLongPress = false;
+    
+    newSwitchState1 = digitalRead(pPin_switch);
+    delay(1);
+    newSwitchState2 = digitalRead(pPin_switch);
+    delay(1);
+    newSwitchState3 = digitalRead(pPin_switch);
+ 
+    // if all 3 values are the same we can continue
+    if (  (newSwitchState1==newSwitchState2) && (newSwitchState1==newSwitchState3) )
+    {
+        if ( newSwitchState1 != oldSwitchState ) 
+        {
+           // has the button switch been closed?
+           if ( newSwitchState1 == HIGH )
+           {
+              currentMillis = millis();  //get the current "time" (actually the number of milliseconds since the program started)
+
+              if (currentMillis - timePressed > period)  //test whether the period has elapsed to make it a Long Press
+              {
+                pLongPress = true;
+              }
+              else
+              {
+                pSinglePress = true;
+                pState++;
+                if (pState > (pSequenceLength -1) )
+                { 
+                  pState = 0; 
+                }
+                //Serial.print(F("State :")); 
+                //Serial.println(pState);
+              }             
+           }
+           else
+           {
+            pSinglePress = false;
+            pLongPress = false; 
+            //Serial.println("Im being pressed");
+            timePressed = millis();
+           }
+           oldSwitchState = newSwitchState1;
+        }  
+    }  
+}
+
+#endif
